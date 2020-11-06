@@ -13,7 +13,7 @@ export class CatCreateComponent implements OnInit {
   name = new FormControl('');
   price = new FormControl('');
   creating = false;
-  catJustCreated: Cat;
+  // catJustCreated: Cat;
   errString = '';
 
   constructor(private catService: CatService) {
@@ -28,7 +28,7 @@ export class CatCreateComponent implements OnInit {
     let cat: Cat = {
       name: nameValue,
       price: priceValue
-    }
+    };
     this.catService.createCat(cat)
       .pipe(
         catchError(err => {

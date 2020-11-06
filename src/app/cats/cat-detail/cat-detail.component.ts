@@ -40,8 +40,9 @@ err: any;
           return err;
         })
       )
-      .subscribe(() => {
-        this.router.navigateByUrl('cats');
-      });
+      .subscribe();
+    // (() => {
+    // this.router.navigateByUrl('cats');
+    //  })
   }
 }

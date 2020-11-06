@@ -10,14 +10,14 @@ export class CatService{
 
   // Create
     createCat(cat: Cat): Observable<Cat> {
-    return this.http.post<Cat>('https://localhost:46296/api/cats', cat); // check url
+    return this.http.post<Cat>('https://localhost:46296/api/cats', this.getCats()); // check url
   }
 
   // GetAllCats
   getCats(): Observable<Cat[]> {
     return this.http.get<Cat[]>('https://localhost:46296/api/cats');
   }
- // GetCatsbyID
+ // GetCats byID
   getCatById(id: number): Observable<Cat> {
     return this.http.get<Cat>('https://localhost:46296/api/cats/' + id);
   }

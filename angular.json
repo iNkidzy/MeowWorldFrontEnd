@@ -124,5 +124,8 @@
         }
       }
     }},
-  "defaultProject": "Meow-World"
+  "defaultProject": "Meow-World",
+  "cli": {
+    "analytics": "1eb23c5f-eeab-40de-8855-40b86511b80d"
+  }
 }

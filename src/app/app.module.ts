@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CatListComponent } from './cats/cat-list/cat-list.component';
@@ -22,11 +22,11 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component'; // <--NgM
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    HttpClientModule,
+   //  NgbModule
   ],
- // providers: [],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
