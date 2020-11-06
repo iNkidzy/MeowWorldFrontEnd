@@ -1,0 +1,14 @@
+<h1>Create Cat:</h1>
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
+<label>
+  Price:
+  <input type="number" [formControl]="price">
+</label>
+<button (click)="save()"
+        [disabled]="creating">Save</button>
+
+<h1 *ngIf="errString" style="color: #8b0000">{{errString}}</h1>
+

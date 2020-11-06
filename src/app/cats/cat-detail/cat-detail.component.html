@@ -1,0 +1,19 @@
+<div *ngIf="cat$ | async as cat">
+  <h1>{{cat.name}}</h1>
+  <h2>{{cat.price}}</h2>
+</div>
+<button (click)="delete()">Delete</button>
+<p *ngIf="err" style="color: darkred">{{err.error}}</p>
+
+
+
+<!--<h2>{{cat.name | uppercase}} Details</h2>-->
+<!--<p>cats works!</p>-->
+<!--<div><span>id: </span>{{cat.id}}</div>-->
+<!--<div><span>name: </span>{{cat.name}}</div>-->
+
+<!--<div>-->
+<!--  <label>name:-->
+<!--    <input [(ngModel)]="cat.name" placeholder="name"/>-->
+<!--  </label>-->
+<!--</div>-->
