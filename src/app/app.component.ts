@@ -10,10 +10,10 @@ export class AppComponent {
   showButton1 = true;
   buttons = ['A1', 'A2', 'A3', 'Cat'];
 
-  changeTitle() {
-    this.title = 'cats';
-  }
-  showFirstButton() {
-    this.showButton1 = !this.showButton1;
-  }
-}
+    // changeTitle() {
+   //  this.title = 'cats';
+    }
+  // showFirstButton() {
+  //   this.showButton1 = !this.showButton1;
+  //  }
+// }

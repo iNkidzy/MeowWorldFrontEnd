@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   // backEndUrl: 'https://localhost:46296/api/cats/'
+  apiUrl: 'https://localhost:46296'
 };
 
 /*

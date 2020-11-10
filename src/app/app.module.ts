@@ -9,7 +9,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { CatListComponent } from './cats/cat-list/cat-list.component';
 import { CatDetailComponent } from './cats/cat-detail/cat-detail.component';
 import { CatCreateComponent } from './cats/cat-create/cat-create.component';
-import { ToolbarComponent } from './shared/toolbar/toolbar.component'; // <--NgModel lives here
+import { ToolbarComponent } from './shared/toolbar/toolbar.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import {AuthGuard} from './guards/auth.guard';
+import {AuthenticationService} from './shared/service/authentication.service'; // <--NgModel lives here
+
 
 @NgModule({
   declarations: [
@@ -17,16 +22,21 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component'; // <--NgM
     CatListComponent,
     CatDetailComponent,
     CatCreateComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-   //  NgbModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    // TodoitemService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
