@@ -1,14 +1,34 @@
 <div class="col-md-6 col-md-offset-3">
-  <h2>Home</h2> Logged in as: {{username}}
+  <h2><strong>Home</strong></h2>
+  <p>Welcome {{username}}!</p>
+  You're logged in as: <strong>{{username}}</strong>
+          <!--   <p>Your role is: <strong>{{currentUser.role}}</strong>.</p> -->
+  <p>This page can be accessed by all authenticated users.</p>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-5 col-md-offset-5">
+ <!-- <div>
+    Current user from secure api end point:
+    <ul>
+      <li *ngIf="userFromApi">{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+    </ul>
+  </div> -->
+
   <p *ngIf="errormessage; else elseBlock" class="alert alert-danger">{{errormessage}}</p>
   <ng-template #elseBlock>
-    <p>You're logged in {{username}}!</p>
     <div>
-      TodoItems from secure api end point:
+    <!--  <strong>Cats from secure api end point:</strong>
       <ul>
-        <li *ngFor="let todoitem of todoItems">{{todoitem.id}}:{{todoitem.name}}, Complete:{{todoitem.isComplete}}</li>
+        <li *ngFor="let cat of Cats">Name:{{cat.name}}, Type:{{cat.type}}, Color:{{cat.color}}, CreatedDate:{{cat.createdDate}}, Price:{{cat.price}}</li>
+      </ul>
+    </div>
+    <div> move to other place -->
+      <strong>Products from secure api end point:</strong>
+      <ul>
+        <li *ngFor="let product of Products">Name:{{product.name}}, Complete:{{product.isComplete}}</li>
       </ul>
     </div>
   </ng-template>
   <p><a [routerLink]="['/login']">Logout</a></p>
+  </div>
 </div>

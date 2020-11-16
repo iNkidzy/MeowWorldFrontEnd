@@ -13,7 +13,13 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './guards/auth.guard';
-import {AuthenticationService} from './shared/service/authentication.service'; // <--NgModel lives here
+import {AuthenticationService} from './shared/service/authentication.service';
+import { ProductComponent } from './products/product-list/product.component';
+import {ProductService} from './products/shared/product.service';
+import { CatUpdateComponent } from './cats/cat-update/cat-update.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AdminComponent } from './admin/admin.component';
+import {CatService} from './cats/Shared/cat.service'; // <--NgModel lives here
 
 
 @NgModule({
@@ -24,7 +30,11 @@ import {AuthenticationService} from './shared/service/authentication.service'; /
     CatCreateComponent,
     ToolbarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ProductComponent,
+    CatUpdateComponent,
+    WelcomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +45,8 @@ import {AuthenticationService} from './shared/service/authentication.service'; /
   providers: [
     AuthGuard,
     AuthenticationService,
+    ProductService,
+   // CatService// Maybeoutcomment
     // TodoitemService
   ],
   bootstrap: [AppComponent]

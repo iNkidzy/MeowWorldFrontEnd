@@ -2,7 +2,8 @@
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 260%;
+
 }
 h2, h3 {
   color: #444;
@@ -18,5 +19,6 @@ body, input[type="text"], button {
 }
 /* everywhere else */
 * {
+  margin-right: 5px;
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -12,6 +12,11 @@ import {CatService} from '../Shared/cat.service';
 export class CatCreateComponent implements OnInit {
   name = new FormControl('');
   price = new FormControl('');
+  type = new FormControl('');
+  color = new FormControl('');
+ //  ownerId = new FormControl('');
+  createdDate = new FormControl('');
+ // isCompleted = new FormControl('');
   creating = false;
   // catJustCreated: Cat;
   errString = '';
@@ -21,13 +26,23 @@ export class CatCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  save() {
+  save = () => {
     this.creating = true;
-    let nameValue = this.name.value;
-    let priceValue = this.price.value;
-    let cat: Cat = {
+    const nameValue = this.name.value;
+    const typeValue = this.type.value;
+    const colorValue = this.color.value;
+    const priceValue = this.price.value;
+   // const isCompletedValue = this.isCompleted.value;
+   //  const ownerIdValue = this.ownerId.value;
+    const createdDateValue = this.createdDate.value;
+    const cat: Cat = {
       name: nameValue,
-      price: priceValue
+      price: priceValue,
+      color: colorValue,
+      type: typeValue,
+      // ownerId: ownerIdValue,
+      createdDate: createdDateValue,
+    //  isComplete: isCompletedValue
     };
     this.catService.createCat(cat)
       .pipe(
@@ -40,6 +55,9 @@ export class CatCreateComponent implements OnInit {
       .subscribe(cats => {
         this.name.reset();
         this.price.reset();
+        this.createdDate.reset();
+        this.color.reset();
+        this.type.reset();
         this.creating = false;
         this.errString = '';
         // this.catJustCreated = cat;

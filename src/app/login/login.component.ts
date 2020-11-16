@@ -9,7 +9,6 @@ import {AuthenticationService} from '../shared/service/authentication.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   loginForm: FormGroup;
   submitted = false;
   loading = false;
@@ -32,6 +31,8 @@ export class LoginComponent implements OnInit {
   // Getters for easy access to form fields
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
+ // get usernameAdmin() { return this.loginForm.get('Admin'); }
+ // get passwordAdmin() { return this.loginForm.get('admin'); }
 
   onSubmit() {
     this.submitted = true;
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         success => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/']);  // somehow navigate to another page for admin
         },
         error => {
           this.errormessage = error.message;

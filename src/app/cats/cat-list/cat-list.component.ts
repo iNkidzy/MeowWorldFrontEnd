@@ -11,22 +11,31 @@ import {catchError, switchMap} from 'rxjs/operators';
   styleUrls: ['./cat-list.component.scss']
 })
 export class CatListComponent implements OnInit {
-  cats$: Observable<Cat[]>;
+  Cats: Cat[];
+  errormessage: '';
 
   constructor(private catService: CatService) {
   }
 
   ngOnInit(): void {
-    this.cats$ = this.catService.getCats();
-  }
-  delete(cat: Cat) {
-    this.catService.delete(cat.price)
-      .pipe(
-        switchMap(c => this.cats$ = this.catService.getCats()),
-        catchError(err => {
-          return err;
-        })
-      ).subscribe();
+    this.catService.getCats()
+      .subscribe(
+        cats => {
+          this.Cats = cats;
+        },
+        error => {
+          this.errormessage = error.message;
+        });
   }
 }
+ // delete(id: any): any {
+  //  this.catService.delete(id)
+  //    .pipe(
+  //      switchMap(c => this.cats$ = this.catService.getCats()),
+ //       catchError(err => {
+//          return err;
+ //       })
+ //     ).subscribe();
+//  }
+
 

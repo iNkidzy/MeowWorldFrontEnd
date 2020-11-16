@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
- //  backEndUrl: 'https://azurelinkhere'
- // apiUrl: 'https://meowworldapi.azurewebsites.net'
+ // Lars: backEndUrl: 'https://azurelinkhere'
+ // Henrik: apiUrl: 'https://meowworldapi.azurewebsites.net'
 };

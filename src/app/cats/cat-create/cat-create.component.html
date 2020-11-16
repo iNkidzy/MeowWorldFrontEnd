@@ -5,6 +5,21 @@
 
   Price:
   <input type="number" [formControl]="price">
+  <label for="type">
+    Type:
+  </label>
+  <input id="type" type="text" [formControl]="type">
+  <label for="color">
+    Color:
+  </label>
+  <input id="color" type="text" [formControl]="color">
+  <label for="color">
+    CreatedDate:
+  </label>
+  <input id="createdDate" type="datetime-local" [formControl]="createdDate">
+ <!-- <input type="hidden" value="1" [formControl]="ownerId"/> -->
+<!--  <input type="hidden" value="1" [formControl]="isCompleted"/> -->
+  <!--{{cat|json}} -->
 </label>
 <button (click)="save()"
         [disabled]="creating">Save</button>

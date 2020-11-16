@@ -1,4 +1,11 @@
-<h4 *ngFor="let cat of cats$ | async">
-  {{cat.name}} - {{cat.price}} <button (click)="delete(cat)">Delete</button>
-</h4>
+<!-- <h4 *ngFor="let cat of cats$ | async">
+  routerLink="{{cat.name}}-{{cat.type}}-{{cat.color}}-{{cat.price}}-{{cat.createdDate}}"<button (click)="delete(cat)">Delete</button>
+  <button routerLink="{{cat.type}}">Details</button>
+</h4> -->
 
+<div>
+  Here are all Cats:
+  <ul>
+    <li *ngFor="let cat of Cats">Name:{{cat.name}}, Type:{{cat.type}}, Color:{{cat.color}}, CreatedDate:{{cat.createdDate}}, Price:{{cat.price}}</li>
+  </ul>
+</div>

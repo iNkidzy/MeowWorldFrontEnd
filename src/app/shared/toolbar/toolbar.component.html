@@ -1,12 +1,70 @@
-<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group mr-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-secondary">List</button>
-    <button type="button" class="btn btn-secondary">Create</button>
-    <button type="button" class="btn btn-secondary">Delete</button>
-    <button type="button" class="btn btn-secondary">EditMaybe</button>
-</div>
-  <ul>
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="/todo">TodoItem</a></li>
+ <nav *ngIf="!currentUser && !isAdmin"
+     class="navbar navbar-expand-lg navbar-light"style="background-color: #e3f2fd;">
+  <a class="navbar-brand"style="background-color: #e3f2fd;" href="welcome">MeowWorld</a>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+
+    <li class="nav-item">
+      <a class="nav-link" href="login">Login</a>
+
+    </li>
+    <li class="nav-item">
+      <a class="nav-item nav-link" [routerLink]="['/login']" >Logout</a>
+    </li>
   </ul>
-</div>
+
+
+
+
+
+
+
+
+    <ul *ngIf="currentUser" class="navbar-nav">
+      <li  class="nav-item">
+        <a class="nav-link" href="product-list">Show Me</a>
+      </li>
+   <!--   <li class="nav-item">
+        <a class="nav-link" href="product-create">Create Me</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+      </li>
+    </ul>
+
+   <li class="nav-item">
+     <a class="nav-link"[routerLink]="isAdmin" *ngIf="currentAdmin">Admin</a>
+       </li>
+
+  <ul *ngIf="currentAdmin" class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="admin">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" href="cat-list">Show Me</a>
+    </li>
+   <! -- routerLink="/admin" -->
+   <li class="nav-item">
+      <a class="nav-link" href="cat-create">Create Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="cat-update">Update Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="cat-detail">Delete Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+    </li>
+  </ul>
+</nav>
+
+<! -- nav -->
+<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #e3f2fd;" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" [routerLink]="['/']">Home</a>
+    <a class="nav-item nav-link" [routerLink]="['/admin']" *ngIf="isAdmin">Admin</a>
+  <!--  <a class="nav-item nav-link" [routerLink]="['/login']">Logout</a> -->
+  </div>
+</nav>
